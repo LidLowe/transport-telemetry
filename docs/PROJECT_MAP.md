@@ -22,7 +22,7 @@ tracker ← RX_SUMMARY (60 с) ← сервер, независимо от TX
 
 | Интерфейс | Текущее состояние |
 |---|---|
-| [POSITION_V1](icd/POSITION_V1.md) | 20 Б, UDP и best-effort live без прикладного ACK **APPROVED**. AES-CCM-8 **APPROVED** (цель 28 Б); хранение ключей и TLS 1.3 rekey **APPROVED**, nonce **APPROVED**, переключение key epoch и упаковка **OPEN**. |
+| [POSITION_V1](icd/POSITION_V1.md) | 20 Б, UDP и best-effort live без прикладного ACK **APPROVED**. AES-CCM-8 и wire layout **APPROVED** (7 Б AAD + 13 Б ciphertext + 8 Б tag = 28 Б); хранение ключей и TLS 1.3 rekey **APPROVED**, nonce **APPROVED**, переключение key epoch без `keyId` **OPEN**. |
 | [TX_SUMMARY и RX_SUMMARY](icd/TX_RX_SUMMARY.md) | Независимые окна 60 с **APPROVED**. По 9 Б **PROPOSED**. |
 | [POSITION_LOG_RECORD_V1](icd/POSITION_LOG_RECORD_V1.md) | Одна запись и рабочая цель 35 Б **APPROVED**. Раскладка **PROPOSED**. |
 | [ARCHIVE_TRANSFER](icd/ARCHIVE_TRANSFER.md) | Фоновая передача блоками, архивный ACK и **TCP APPROVED**. TLS 1.3 **APPROVED**, формат блоков/авторизация **OPEN**. |
