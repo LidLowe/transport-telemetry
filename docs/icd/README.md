@@ -2,7 +2,7 @@
 
 | ID | Интерфейс | Назначение | Размер и статус | Зависимости |
 |---|---|---|---|---|
-| ICD-001 | [POSITION_V1](POSITION_V1.md) | Свежая позиция трекера | 20 Б, **UDP**, live No-ACK **APPROVED** в ICD. Защита и параметры упаковки **OPEN**. | Идентичность события и серверный приём |
+| ICD-001 | [POSITION_V1](POSITION_V1.md) | Свежая позиция трекера | 20 Б, **UDP**, live No-ACK **APPROVED**. AES-CCM-6/8 **PROPOSED**, выбор защиты/упаковки **OPEN**. | Идентичность события и серверный приём |
 | ICD-002 | [TX_SUMMARY](TX_RX_SUMMARY.md#tx_summary) | Минутная статистика отправителя | Логика **APPROVED**, 9 Б **PROPOSED**. | POSITION и учётное окно |
 | ICD-003 | [RX_SUMMARY](TX_RX_SUMMARY.md#rx_summary) | Независимая минутная статистика приёма | Логика **APPROVED**, 9 Б **PROPOSED**. | POSITION и учётное окно |
 | ICD-004 | [POSITION_LOG_RECORD_V1](POSITION_LOG_RECORD_V1.md) | Локальная запись измерения и отправки | Единая запись и рабочая цель 35 Б **APPROVED**. Раскладка **PROPOSED**. | Идентичность POSITION, SEND_STATUS, CRC16 |
