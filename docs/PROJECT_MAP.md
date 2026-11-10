@@ -27,6 +27,7 @@ tracker ← RX_SUMMARY (60 с) ← сервер, независимо от TX
 | [POSITION_LOG_RECORD_V1](icd/POSITION_LOG_RECORD_V1.md) | Одна запись и рабочая цель 35 Б **APPROVED**. Раскладка **PROPOSED**. |
 | [ARCHIVE_TRANSFER](icd/ARCHIVE_TRANSFER.md) | Фоновая передача блоками и архивный ACK **APPROVED**. TCP/TLS **PROPOSED**. |
 | [ICD-006](icd/README.md) | Управление, конфигурация и OTA. Полный контракт **OPEN**. |
+| [DEVICE_STATUS (ICD-007)](icd/DEVICE_STATUS.md) | Отдельный пакет статуса включён в план **APPROVED**. Формат и правила отправки **OPEN**. |
 
 ## Будущие области проектирования
 
