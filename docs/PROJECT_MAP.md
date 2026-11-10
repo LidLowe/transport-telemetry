@@ -26,12 +26,12 @@ tracker ← RX_SUMMARY (60 с) ← сервер, независимо от TX
 | [TX_SUMMARY и RX_SUMMARY](icd/TX_RX_SUMMARY.md) | Независимые окна 60 с **APPROVED**. По 9 Б **PROPOSED**. |
 | [POSITION_LOG_RECORD_V1](icd/POSITION_LOG_RECORD_V1.md) | Одна запись и рабочая цель 35 Б **APPROVED**. Раскладка **PROPOSED**. |
 | [ARCHIVE_TRANSFER](icd/ARCHIVE_TRANSFER.md) | Фоновая передача блоками, архивный ACK и **TCP APPROVED**. TLS 1.3 **APPROVED**, формат блоков/авторизация **OPEN**. |
-| [ICD-006](icd/README.md) | Управление, конфигурация и OTA. Полный контракт **OPEN**. |
+| [ICD-006](icd/README.md) | Управление, конфигурация, OTA и сервисный rekey **APPROVED как потребности**. Формат команд и полного контракта **OPEN**. |
 | [DEVICE_STATUS (ICD-007)](icd/DEVICE_STATUS.md) | Отдельный пакет статуса включён в план **APPROVED**. Формат и правила отправки **OPEN**. |
 
 ## Ключи и защищённая среда
 
-**APPROVED (архитектура):** [KEY_MANAGEMENT](security/KEY_MANAGEMENT.md) — индивидуальный долгосрочный приватный ключ в защищённой области MCU либо Secure Element; временный AES-CCM-8-ключ только в RAM, TLS 1.3/ECDHE для установления и недельной ротации, новый ключ после reboot, без открытого fallback. Противодействие физическому доступу — требование, реализация и threat model OPEN.
+**APPROVED (архитектура):** [KEY_MANAGEMENT](security/KEY_MANAGEMENT.md) — индивидуальный долгосрочный приватный ключ в защищённой области MCU либо Secure Element; временный AES-CCM-8-ключ только в RAM, TLS 1.3/ECDHE для установления и недельной ротации по отдельному сервисному запросу трекера, новый ключ после reboot, без открытого fallback. Временная поддержка двух ключевых эпох при rekey **APPROVED как принцип**, формат `REKEY_*` и порядок переключения **OPEN/PROPOSED**. Противодействие физическому доступу — требование, реализация и threat model OPEN.
 
 ## Будущие области проектирования
 
