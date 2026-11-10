@@ -9,8 +9,8 @@
 ## Потоки
 
 ```text
-GNSS → tracker → POSITION_V1 (20 Б) → live backend → текущее состояние → карта
-           └──→ POSITION_LOG_RECORD_V1 (~35 Б) → NVM → фоновый архив
+GNSS → tracker → POSITION_V1 (20 Б, UDP) → live backend → текущее состояние → карта
+           └──→ POSITION_LOG_RECORD_V1 (~35 Б) → NVM → ARCHIVE_TRANSFER (TCP) → архив
 tracker → TX_SUMMARY (60 с) → сервер
 tracker ← RX_SUMMARY (60 с) ← сервер, независимо от TX
 управление и OTA ↔ защищённый подтверждаемый обмен (полный контракт OPEN)
@@ -22,10 +22,10 @@ tracker ← RX_SUMMARY (60 с) ← сервер, независимо от TX
 
 | Интерфейс | Текущее состояние |
 |---|---|
-| [POSITION_V1](icd/POSITION_V1.md) | 20 Б и best-effort live без прикладного ACK **APPROVED** в ICD. Детали кодирования **OPEN**. |
+| [POSITION_V1](icd/POSITION_V1.md) | 20 Б, UDP и best-effort live без прикладного ACK **APPROVED** в ICD. Защита/упаковка **OPEN**. |
 | [TX_SUMMARY и RX_SUMMARY](icd/TX_RX_SUMMARY.md) | Независимые окна 60 с **APPROVED**. По 9 Б **PROPOSED**. |
 | [POSITION_LOG_RECORD_V1](icd/POSITION_LOG_RECORD_V1.md) | Одна запись и рабочая цель 35 Б **APPROVED**. Раскладка **PROPOSED**. |
-| [ARCHIVE_TRANSFER](icd/ARCHIVE_TRANSFER.md) | Фоновая передача блоками и архивный ACK **APPROVED**. TCP/TLS **PROPOSED**. |
+| [ARCHIVE_TRANSFER](icd/ARCHIVE_TRANSFER.md) | Фоновая передача блоками, архивный ACK и **TCP APPROVED**. TLS **PROPOSED**, формат блоков **OPEN**. |
 | [ICD-006](icd/README.md) | Управление, конфигурация и OTA. Полный контракт **OPEN**. |
 | [DEVICE_STATUS (ICD-007)](icd/DEVICE_STATUS.md) | Отдельный пакет статуса включён в план **APPROVED**. Формат и правила отправки **OPEN**. |
 
