@@ -22,12 +22,16 @@ tracker ← RX_SUMMARY (60 с) ← сервер, независимо от TX
 
 | Интерфейс | Текущее состояние |
 |---|---|
-| [POSITION_V1](icd/POSITION_V1.md) | 20 Б, UDP и best-effort live без прикладного ACK **APPROVED**. AES-CCM-8 **APPROVED** (целевой UDP payload 28 Б), ключи/nonce/упаковка **OPEN**. |
+| [POSITION_V1](icd/POSITION_V1.md) | 20 Б, UDP и best-effort live без прикладного ACK **APPROVED**. AES-CCM-8 **APPROVED** (цель 28 Б); хранение ключей и TLS 1.3 rekey **APPROVED**, nonce/упаковка **OPEN**. |
 | [TX_SUMMARY и RX_SUMMARY](icd/TX_RX_SUMMARY.md) | Независимые окна 60 с **APPROVED**. По 9 Б **PROPOSED**. |
 | [POSITION_LOG_RECORD_V1](icd/POSITION_LOG_RECORD_V1.md) | Одна запись и рабочая цель 35 Б **APPROVED**. Раскладка **PROPOSED**. |
-| [ARCHIVE_TRANSFER](icd/ARCHIVE_TRANSFER.md) | Фоновая передача блоками, архивный ACK и **TCP APPROVED**. TLS **PROPOSED**, формат блоков **OPEN**. |
+| [ARCHIVE_TRANSFER](icd/ARCHIVE_TRANSFER.md) | Фоновая передача блоками, архивный ACK и **TCP APPROVED**. TLS 1.3 **APPROVED**, формат блоков/авторизация **OPEN**. |
 | [ICD-006](icd/README.md) | Управление, конфигурация и OTA. Полный контракт **OPEN**. |
 | [DEVICE_STATUS (ICD-007)](icd/DEVICE_STATUS.md) | Отдельный пакет статуса включён в план **APPROVED**. Формат и правила отправки **OPEN**. |
+
+## Ключи и защищённая среда
+
+**APPROVED (архитектура):** [KEY_MANAGEMENT](security/KEY_MANAGEMENT.md) — индивидуальный долгосрочный приватный ключ в защищённой области MCU либо Secure Element; временный AES-CCM-8-ключ только в RAM, TLS 1.3/ECDHE для установления и недельной ротации, новый ключ после reboot, без открытого fallback. Противодействие физическому доступу — требование, реализация и threat model OPEN.
 
 ## Будущие области проектирования
 
