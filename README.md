@@ -10,6 +10,8 @@
 4. [AGENTS.md](AGENTS.md) — правила совместной работы с Codex.
 5. [PROJECT_CONTEXT](docs/PROJECT_CONTEXT.md) — **подробный** контекст, все доступные причины и решения.
 6. [MIGRATION_PLAN](docs/MIGRATION_PLAN.md) — куда перенесён каждый раздел старого ICD.
+7. [PROJECT_PHILOSOPHY](docs/PROJECT_PHILOSOPHY.md) — принципы обращения с неопределённостью, отказами и достоверностью данных.
+8. [RESEARCH_BACKLOG](docs/RESEARCH_BACKLOG.md) — будущие исследования отказоустойчивых распределённых систем и прогноза прибытия автобусов; **не требования MVP**.
 
 ## Дерево
 
