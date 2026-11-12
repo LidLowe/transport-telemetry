@@ -29,7 +29,7 @@ tracker ← RX_SUMMARY (60 с) ← сервер, независимо от TX
 | [POSITION_V1](icd/POSITION_V1.md) | 20 Б, UDP и best-effort live без прикладного ACK **APPROVED**. AES-128-CCM-8 (16 Б ключ, TLS 1.3 Exporter и контекст по device/purpose/direction/epoch) и wire layout **APPROVED** (7 Б AAD + 13 Б ciphertext + 8 Б tag = 28 Б); хранение ключей и TLS 1.3 rekey **APPROVED**, nonce **APPROVED**, выбор key epoch без `keyId` через два допустимых ключа **APPROVED**; после потери серверного anti-replay **fail-closed с новым TLS/rekey APPROVED**, сроки/окно/формат проверки **OPEN**, а **периодическая TLS-сверка + срок ключа APPROVED**. |
 | [TX_SUMMARY и RX_SUMMARY](icd/TX_RX_SUMMARY.md) | Независимые окна 60 с **APPROVED**. По 9 Б **PROPOSED**. |
 | [POSITION_LOG_RECORD_V1](icd/POSITION_LOG_RECORD_V1.md) | Одна запись и рабочая цель 35 Б **APPROVED**. Раскладка **PROPOSED**. |
-| [ARCHIVE_TRANSFER](icd/ARCHIVE_TRANSFER.md) | Фоновая передача блоками, архивный ACK и **TCP APPROVED**. TLS 1.3 **APPROVED**, формат блоков/авторизация **OPEN**. |
+| [ARCHIVE_TRANSFER](icd/ARCHIVE_TRANSFER.md) | Фоновая передача блоками по TCP/TLS 1.3 **APPROVED**. **R7 APPROVED:** стабильная идентичность блока, атомарный идемпотентный durable commit и прикладной ACK только после него; формат блока/ACK, durable storage и лимиты **OPEN**. |
 | [ICD-006](icd/README.md) | Управление, конфигурация, OTA и сервисный rekey **APPROVED как потребности**. Формат команд и полного контракта **OPEN**. |
 | [DEVICE_STATUS (ICD-007)](icd/DEVICE_STATUS.md) | Отдельный пакет статуса включён в план **APPROVED**. Формат и правила отправки **OPEN**. |
 
