@@ -137,4 +137,4 @@
 
 ## Источники решений
 
-[Diagnostics ICD старой схемы](../../baseline-old-schema/Transport_Telemetry_Diagnostics_ICD_v0.3_SNAPSHOT.md), [исторический §20 и уточнения §21 общего ICD](../MIGRATION_PLAN.md#карта-переноса-общего-icd), [DEC-020…031, DEC-039, DEC-041 и DEC-050](../DECISIONS.md). Конфликт live-профиля с SRS описан в [POSITION_V1](POSITION_V1.md#live-доставка).
+[SRS FR-035](../SRS.md#47-simulation--diagnostics) · [Журнал решений](../DECISIONS.md)
