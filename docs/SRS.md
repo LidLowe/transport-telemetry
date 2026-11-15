@@ -5,6 +5,8 @@
 
 **Основание редакции.** SRS v1.1 от 5 ноября 2026 года и согласованное разделение гарантий live и архивной доставки. Форматы и параметры реализации задают [тематические ICD](icd/README.md). [Журнал решений](DECISIONS.md#единый-srs-и-гарантии-доставки)
 
+[Границы системы](#2-system-scope) · [Функциональные требования](#4-functional-requirements) · [Нефункциональные требования](#5-non-functional-requirements) · [Отказы и восстановление](#6-failure--recovery-requirements) · [Безопасность](#7-security-requirements) · [Критерии приёмки](#8-verification-strategy-and-acceptance-gates) · [Порядок реализации](#11-project-development-strategy)
+
 ---
 
 # 1. Introduction
